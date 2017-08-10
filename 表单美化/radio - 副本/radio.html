@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单美化-单选按钮</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/radio.css">
+	<script src="js/radio.js"></script>
+</head>
+<body>
+	<div class="type">
+		<!-- <form action="#" method="post" name="typeForm">
+			<label>配送类型</label>
+			<input type="radio" name="type" checked /><label>全部</label>
+			<input type="radio" name="type" /><label>京东配送</label>
+			<input type="radio" name="type" /><label>第三方配送</label>
+		</form> -->
+		<dl id="type">
+			<dt>配送类型:</dt>
+			<dd class="selected" onclick="show(0)"><a href="#"><b></b>全部</a></dd>
+			<dd><a href="#" onclick="show(1)"><b></b>京东配送</a></dd>
+			<dd><a href="#" onclick="show(2)"><b></b>第三方配送</a></dd>
+		</dl>
+	</div>
+</body>
+</html>

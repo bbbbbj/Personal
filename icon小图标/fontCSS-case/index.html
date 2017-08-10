@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css小图标案例</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/fontCss.css">
+</head>
+<body>
+	<ul class="layout">
+		<li><i class="icon icon-fire shadow"></i></li>
+		<li><i class="icon icon-spinner spinner"></i></li>
+		<li><i class="icon icon-heart love"></i></li>
+	</ul>
+	<script src="js/jquery.min.js"></script>
+	<script>
+		$(".love").on("click",function(){
+			var $this = $(this);
+			$this.addClass("btn-activated")
+			setTimeout(function(){
+				$this.removeClass("btn-activated")
+			},500)
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+@charset "utf-8";
+
+.wrapper{
+	width: 938px;
+	height: 128px;
+	border: 1px solid #d3d3d3;
+}
+
+.wrapper li{
+	width: 156px;
+	height: 128px;
+	float: left;
+	overflow: hidden;
+}
+.wrapper li a{
+	height: 128px;
+	width: 156px;
+	position: relative;
+	overflow: hidden;
+	display: block;
+}
+.wrapper img{
+	height: 72px;
+	width: 117px;
+	position: absolute;
+	bottom: 0;
+	right: -15px;
+}
+.wrapper .info{
+	width: 136px;
+	padding: 4px 10px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.wrapper .info h3{
+	font-size: 14px;
+	font-weight: 700;
+}
+.wrapper .info p{
+	width: 136px;
+	height: 22px;
+	line-height: 22px;
+	font-size: 12px;
+	color: #868686;
+}
+.wrapper .info .price{
+	font-size: 14px;
+	font-style: italic;
+	color: #fa2a5d;
+	height: 35px;
+}
+.wrapper .line{
+	position: absolute;
+	right: 0;
+	width: 0;
+	height: 128px;
+	border: 1px dashed #ccc;
+}
+.wrapper .mask{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 128px;
+	width: 156px;
+	opacity: 0.15;
+	background-color: #000;
+}
+.wrapper:hover .mask{
+	opacity: 0.15;
+}
+/*展开之后的效果*/
+.wrapper li.big,li.big a{
+	width: 314px;
+}
+.wrapper li.big img{
+	width: 195px;
+	height: 120px;
+	right: 0;
+	bottom: 0;
+}
+.wrapper li.big .info{
+	width: 290px;
+}
+.wrapper li.big h3{
+	font-size: 18px;
+}
+.wrapper li.big p{
+	font-size: 14px;
+	width: 166px;
+}
+.wrapper li.big p.price{
+	font-size: 16px;
+	padding-top: 7px;
+}
+.wrapper li.big a:hover .mask{
+	opacity: 0;
+}
+.wrapper li.big a .mask{
+	width: 314px;
+	opacity: 0;
+}
+.wrapper ul *{
+	transition: all linear .1s
+}

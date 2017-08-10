@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas绘制圆弧</title>
+</head>
+<body>
+	<canvas id="canvas" style="border: 1px solid #aaa; display: block; margin:50px auto;"></canvas>
+	 <script>
+	 	window.onload = function(){
+	 		var canvas = document.getElementById('canvas');
+
+	 		canvas.width = 1024;
+	 		canvas.height = 768;
+
+	 		var context = canvas.getContext('2d');
+
+	 		context.lineWidth = 5;
+	 		context.strokeStyle = '#005588';
+
+	 		for(var i=0;i<10;i++){
+	 			context.beginPath();
+	 			context.arc(50 + i*100 , 400 , 40 , 0 , 2*Math.PI*(i+1) / 10);
+	 			
+
+	 			context.stroke();
+	 		}
+	 		for(var i=0;i<10;i++){
+	 			context.beginPath();
+	 			context.arc(50 + i*100 , 540 , 40 , 0 , 2*Math.PI*(i+1) / 10);
+	 			context.closePath();//结束路径并闭合,对于fill()是没有用的
+
+	 			context.fill();
+	 		}
+	 	}
+	 </script>
+</body>
+</html>

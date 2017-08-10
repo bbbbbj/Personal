@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+body{
+	font: 13px/16px "微软雅黑";
+}
+.typeList{
+	width: 540px;
+	height: 30px;
+	border: 1px solid #dfdfdf;
+	border-width: 1px 0;
+	margin: 50px auto;
+	overflow: hidden;
+}
+.typeList ul{
+	height: 30px;
+	line-height: 30px;
+	padding-left: 15px;
+}
+.typeList ul li{
+	float: left;
+	margin-right: 12px;
+	position: relative;
+}
+.typeList ul li input{
+	display: none;
+}
+.typeList ul li b{
+	width: 20px;
+	height: 20px;
+	display: block;
+	background: url(../images/checkbox.gif) no-repeat -12px -18px;
+	position: absolute;
+	top: 6px;
+	left: 0;
+}
+.typeList ul li label{
+	padding-left: 23px;
+}
+.typeList ul li:hover b{
+	background-position: -12px -118px;
+}
+.typeList ul .selected b,.typeList ul .selected:hover b{
+	background-position: -12px -218px;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas基础</title>
+</head>
+<body>
+	<canvas id="canvas" style="border: 1px solid #aaa; display: block; margin:50px auto;"></canvas>
+
+	<script>
+	
+	window.onload = function(){
+		var canvas = document.getElementById('canvas');
+		canvas.width = 800;
+		canvas.height = 800;
+		// convas.width = 1024;
+		// convas.height = 768;
+		// 定义宽高方法
+
+		if(canvas.getContext('2d')){
+			var context = canvas.getContext('2d');
+			//使用context绘制
+		}else{
+			alert('当前浏览器不支持canvas，请更换浏览器后再试')
+		}
+		for(var i=0;i<tangram.length;i++){
+			draw(tangram[i],context);
+		}
+
+		//绘制线条
+		
+		// context.beginPath();//开始声明
+		// context.moveTo(100,100);//起始坐标
+		// context.lineTo(700,700);//终止坐标
+		// context.lineTo(100,700);
+		// context.lineTo(100,100);
+		// context.closePath()//结束声明
+
+		// context.fillStyle = 'rgb(2,100,30)';
+		// context.fill();//填充颜色
+
+		// context.lineWidth = 5;//线条宽度
+		// context.strokeStyle = 'red';
+		// context.stroke();//绘制线条方法
+
+		// context.beginPath();//开始声明
+		// context.moveTo(200,100);
+		// context.lineTo(700,600);
+		// context.closePath()//结束声明
+
+		// context.strokeStyle = 'black';
+		// context.stroke();				
+	}
+	//七巧板
+	
+	var tangram = [
+		{p:[{x:0,y:0},{x:800,y:0},{x:400,y:400}],color:'#caff67'},
+		{p:[{x:0,y:0},{x:400,y:400},{x:0,y:800}],color:'#67becf'},
+		{p:[{x:800,y:0},{x:800,y:400},{x:600,y:600},{x:600,y:200}],color:'#ef3d61'},
+		{p:[{x:600,y:200},{x:600,y:600},{x:400,y:400}],color:'#f9f51a'},
+		{p:[{x:400,y:400},{x:600,y:600},{x:400,y:800},{x:200,y:600}],color:'#a594c0'},
+		{p:[{x:200,y:600},{x:400,y:800},{x:0,y:800}],color:'#fa8ecc'},
+		{p:[{x:800,y:400},{x:800,y:800},{x:400,y:800}],color:'#f6ca29'}
+	];
+	function draw(piece,cxt){
+		cxt.beginPath();
+		cxt.moveTo(piece.p[0].x,piece.p[0].y);
+		for(var i=1;i<piece.p.length;i++){
+			cxt.lineTo(piece.p[i].x,piece.p[i].y);
+		}
+		cxt.closePath();
+		cxt.strokeStyle = 'black';
+		cxt.lineWidth = 3;
+		cxt.stroke();
+
+		cxt.fillStyle = piece.color;
+		cxt.fill();
+	}
+	
+	</script>
+</body>
+</html>

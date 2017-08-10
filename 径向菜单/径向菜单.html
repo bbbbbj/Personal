@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>径向菜单效果</title>
+	<style type="text/css">
+	/*清除样式*/
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background-color: #292a38;
+			font-family: 'Microsoft Yahei';
+		}
+		h1{
+			text-align: center;
+			color: #fff;
+			margin-top: 40px;
+		}
+		
+		/*nav样式*/
+		.nav-wrap{
+			position: relative;
+			width: 200px;
+			height: 200px;
+			margin: 120px auto 20px;
+			border: 2px dotted #4e5061;
+			border-radius: 100%;
+		}
+		.nav-wrap .main-nav{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%,-50%);
+			text-align: center;
+			text-decoration: none;
+			color: #fff;
+			border-radius: 3px;
+			text-shadow: 1px 1px 0 #000;
+			background: #15a5f3;
+			font-size: 12px;
+			width: 40px;
+			height: 40px;
+			line-height: 40px;
+			cursor: pointer;
+		}
+		.nav-wrap nav{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(255,255,255,.3);
+			transform: scale(0);
+			transition: all 0.5s ease-out;
+			opacity: 0;
+		}
+		.nav-wrap.active nav{
+			transform: scale(1);
+			opacity: 1;
+		}
+		/*子菜单*/
+		.nav-wrap nav > a{
+			position: absolute;
+			width: 30px;
+			height: 30px;
+			background: #f44283;
+			text-align: center;
+			line-height: 30px;
+			text-decoration: none;
+			color: #fff;
+			border-radius: 3px;
+			text-shadow: 1px 1px 0 #000;
+			transform: translate(-50%,-50%);
+		}
+
+	</style>
+</head>
+<body>
+	<h1>径向菜单效果演示</h1>
+	<div class="nav-wrap">
+		<nav>
+			<a href="" class="nav-item">1</a>
+			<a href="" class="nav-item">2</a>
+			<a href="" class="nav-item">3</a>
+			<a href="" class="nav-item">4</a>
+			<a href="" class="nav-item">5</a>
+			<a href="" class="nav-item">6</a>
+			<a href="" class="nav-item">7</a>
+			<a href="" class="nav-item">8</a>
+		</nav>
+		<a href="" class="main-nav">点我</a>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+	</div>
+</body>
+</html>

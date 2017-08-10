@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>散列画廊</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body onselectstart="return false;"><!-- 防止页面文字被选中 -->
+	<!-- 2.改写视图，为模板字符串 -->
+	<div class="wrap" id="wrap">
+
+		<!-- photo负责二维上的旋转 -->
+		<div class="photo photo_front" id="photo_{{index}}" onclick="turn(this)">
+
+			<!-- photo-wrap负责翻转 -->
+			<div class="photo-wrap">
+				<div class="side side-front">
+					<p class="image">
+						<img src="img/{{img}}" alt="" />
+					</p>
+					<p class="caption">{{caption}}</p>
+				</div>
+				<div class="side side-back">
+					<p class="desc">{{desc}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="img/data.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/script.js" charset="utf-8"></script>
+</body>
+</html>

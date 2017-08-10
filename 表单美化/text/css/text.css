@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+body{
+	font: 14/28px "微软雅黑"
+}
+.contact{
+	width: 700px;
+	height: auto;
+	background: #f6f6f6;
+	margin: 40px auto;
+	padding: 10px;
+}
+.contact *:focus{
+	outline: none;
+}
+.contact ul{
+	width: 700px;
+}
+.contact ul li{
+	border-bottom: 1px solid #dfdfdf;
+	padding: 12px;
+}
+.contact ul li label{
+	width: 120px;
+	display: inline-block;
+	float: left;
+	line-height: 25px;
+}
+.contact ul li input[type=text]{
+	width: 220px;
+	height: 20px;
+	border: 1px solid #aaaaaa;
+	background: url(../images/red_asterisk.png) no-repeat #fff 98%;
+	padding: 3px 8px;
+	border-radius: 5px;
+	transition: padding .25s;
+
+}
+.contact ul li input:focus{
+	border-color: #c00;
+	background-image: url(../images/invalid.png);
+	padding-right: 70px;
+}
