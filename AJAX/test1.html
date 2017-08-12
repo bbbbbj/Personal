@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>搜索框实现</title>
+</head>
+<body>
+	<div id="container">
+		<h1>输入要搜索的课程名称</h1>
+		<div>
+			<div id="searchbox">
+				<input type="text" id="keyword">
+				<ul id="hits" style="display: none;"></ul>
+			</div>
+			<button id="searchbtn">搜索</button>
+		</div>
+	</div>
+	<script>
+		// 代码不兼容低版本IE
+		// 通过ajax获取命中提示内容
+		docuemnt.getElementById('keyword').oninput = function(){
+			var keyword = this.value;
+			// 典型的ajax编程模板
+			// 1.创建XMLHttpRequest对象
+			var xhr = new XMLHttpRequest();
+			// 2.open操作初始化请求信息
+			xhr.open('GET','keyword/hit?keyword=' + encodeURIComponent(keyword),true);
+			// 3.监听事件处理响应结果
+			xhr.onreadystatechange = function(){
+				if(xhr.readystate == 4 && xhr.status == 200){
+					handleResult(xhr.reponseText);
+				}
+			}
+			//4.send操作发出请求
+			xhr.send();
+		}
+		// 处理响应结果
+		function hendleRequest(ret){
+			ret = JSON.parse(ret);
+			var domHits = document.getElementById('hits');
+			if(ret.length){
+				var lis = [];
+				for(var i=0;i<ret.length;i++){
+					lis.push('<li>' + ret[i] + '</li>');
+				}
+				domHits.innerHTML = lis.join('');
+				domHits.style.display = 'none';
+			}
+		}
+		// 单击提示结果放入输入框
+		document.getElementById('hits').onclick = function(event){
+			document.getElementById('keyword').value = event.target.innerHTML;
+			this.style.display = 'none';
+		}
+	</script>
+</body>
+</html>
