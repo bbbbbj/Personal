@@ -17,7 +17,7 @@ function update(){
 	ball.y += ball.vy;
 	ball.vy += ball.g;
 }
-function render(){
+function render(cxt){
 	cxt.clearRect(0,0,cxt,canvas.width,cxt,canvas.height);
 
 	cxt.fillStyle = ball.color;
