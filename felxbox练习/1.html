@@ -1,0 +1,90 @@
+<!DOCType>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        table td{
+            text-align: center;
+            padding: 10px;
+        }
+        table tr:first-child{
+            background-color: blue;
+            cursor: pointer;
+        }
+    </style>
+<body>
+<table border='1' cellspacing="0">
+    <tr>
+        <td>姓名</td>
+        <td>力量</td>
+        <td>敏捷</td>
+        <td>智力</td>
+    </tr>
+    <tr>
+        <td>德鲁伊</td>
+        <td>17</td>
+        <td>24</td>
+        <td>13</td>
+    </tr>
+    <tr>
+        <td>月之骑士</td>
+        <td>15</td>
+        <td>22</td>
+        <td>16</td>
+    </tr>
+    <tr>
+        <td>众神之王</td>
+        <td>19</td>
+        <td>15</td>
+        <td>20</td>
+    </tr>
+    <tr>
+        <td>流浪剑客</td>
+        <td>23</td>
+        <td>15</td>
+        <td>14</td>
+    </tr>
+</table>
+<script>
+window.onload = function(){
+    var tar = true;
+    var oTable = document.getElementsByTagName('table')[0];
+    var oTr = oTable.getElementsByTagName('tr');
+    var oTarget = oTr[0].getElementsByTagName('td');
+    var a= oTarget.length;
+    var oTd = oTable.getElementsByTagName('td');
+        //console.log('a');
+    for(let i=1;i<oTarget.length;i++){
+        //console.log('a');
+        oTarget[i].onclick = function(){
+            console.log(a);
+            tar=tar?false:true;
+            for(let k=1;k<oTr.length-1;k++){
+                for(let j=a+i;j<oTd.length-a;j=j+a){
+                    console.log('a');
+                    if(!tar){
+                        if(parseInt(oTd[j].innerHTML)>oTd[j+a].innerHTML){
+                            // console.log('0');
+                            var b=oTr[parseInt(j/a)].innerHTML;
+                            oTr[parseInt(j/a)].innerHTML = oTr[parseInt(j/a)+1].innerHTML;
+                            oTr[parseInt(j/a)+1].innerHTML = b;
+                        }
+                    }else{
+                        if(parseInt(oTd[j].innerHTML)<oTd[j+a].innerHTML){
+                            //console.log(j,k)
+                            //console.log(oTr[parseInt(j/a)].innerHTML);
+                            var b=oTr[parseInt(j/a)].innerHTML;
+                            oTr[parseInt(j/a)].innerHTML = oTr[parseInt(j/a)+1].innerHTML;
+                            oTr[parseInt(j/a)+1].innerHTML = b;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+</script>
+</body>
+</html>
